@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 6.5f;
     public Rigidbody2D rb;
     public Animator playerAnimator;  // TODO: uncomment when animations are available
+    private Bounds curIslandBounds;
     
     private Vector2 _movement;
 
@@ -16,12 +17,16 @@ public class PlayerMovement : MonoBehaviour
         if (rb == null) {
             rb = gameObject.GetComponent<Rigidbody2D>();
         }
+        GameManager.Instance.setPlayer(gameObject);
     }
 
     void Update() {
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameManager.Instance.goNextIsland();
+        }
         // Animations control. TODO: uncomment when animations are available
         // playerAnimator.SetFloat("Horizontal", _movement.x);
         // playerAnimator.SetFloat("Vertical", _movement.y);
@@ -29,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate() {
+        
         rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * _movement);
     }
 }
