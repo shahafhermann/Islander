@@ -17,7 +17,7 @@ public class Island
         this.islandGO = islandGO;
         this.minimapIsland = minimap;
         // timeToDrown = Random.Range(180, 360);
-        timeToDrown = Random.Range(5, 30);
+        timeToDrown = Random.Range(60, 180);
     }
 
     public void collectItem(Item item)

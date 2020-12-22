@@ -1,31 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MinimapScript : MonoBehaviour
 {
-    private SpriteRenderer floodRenderer;
+    private Image islandRenderer;
+    private float blinkTime = 0.3f;
+    private float lastBlink;
+
     private Island island;
     // Start is called before the first frame update
     void Start()
     {
-        foreach(SpriteRenderer renderer in GetComponentsInChildren<SpriteRenderer>())
-        {
-            if (renderer.tag.Equals("Flood"))
-            {
-                floodRenderer = renderer;
-                break;
-            }
-        }
-        // GameManager.Instance.addMinimap(this);
+        islandRenderer = GetComponent<Image>();
+        GameManager.Instance.addMinimap(this);
+        lastBlink = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Color color = floodRenderer.color;
-        color.a = (Time.time - GameManager.Instance.getTimeStarted()) / island.getTimeToDrown();
-        floodRenderer.color = color;
+        float drownedPerc = (Time.time - GameManager.Instance.getTimeStarted()) / island.getTimeToDrown();
+        if(drownedPerc >= 0.5f && Time.time - lastBlink > blinkTime) // TODO: and user hasnt visited the island
+        {
+            lastBlink = Time.time;
+            islandRenderer.enabled = !islandRenderer.enabled;
+        }
     }
 
     public void setIsland(Island island)

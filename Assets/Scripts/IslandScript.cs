@@ -10,4 +10,9 @@ public class IslandScript : MonoBehaviour
     {
         GameManager.Instance.addIsland(new Island(gameObject, borderCollider.bounds, new ArrayList(), null));
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
 }
