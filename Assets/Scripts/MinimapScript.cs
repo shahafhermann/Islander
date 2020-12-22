@@ -17,7 +17,7 @@ public class MinimapScript : MonoBehaviour
                 break;
             }
         }
-        GameManager.Instance.addMinimap(this);
+        // GameManager.Instance.addMinimap(this);
     }
 
     // Update is called once per frame
