@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class IslandScript : MonoBehaviour
 {
-    private BoxCollider2D boxCol;
+    public Collider2D borderCollider;
     // Start is called before the first frame update
     void Start()
     {
-        boxCol = GetComponent<BoxCollider2D>();
-        GameManager.Instance.addIsland(new Island(gameObject, null, boxCol.bounds, new ArrayList()));
+        GameManager.Instance.addIsland(new Island(gameObject, null, borderCollider.bounds, new ArrayList()));
     }
 
     // Update is called once per frame

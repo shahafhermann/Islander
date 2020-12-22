@@ -27,10 +27,10 @@ public class PlayerMovement : MonoBehaviour
         {
             GameManager.Instance.goNextIsland();
         }
-        // Animations control. TODO: uncomment when animations are available
-        // playerAnimator.SetFloat("Horizontal", _movement.x);
-        // playerAnimator.SetFloat("Vertical", _movement.y);
-        // playerAnimator.SetFloat("Speed", _movement.sqrMagnitude);
+        // Animations control.
+        playerAnimator.SetFloat("Horizontal", _movement.x);
+        playerAnimator.SetFloat("Vertical", _movement.y);
+        playerAnimator.SetFloat("Speed", _movement.sqrMagnitude);
     }
 
     private void FixedUpdate() {
