@@ -14,7 +14,7 @@ public class MinimapScript : MonoBehaviour
     void Start()
     {
         islandRenderer = GetComponent<Image>();
-        GameManager.Instance.addMinimap(this);
+        // GameManager.Instance.addMinimap(this);
         lastBlink = 0;
     }
 
