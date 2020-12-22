@@ -9,7 +9,7 @@ public class IslandScript : MonoBehaviour
     void Start()
     {
         boxCol = GetComponent<BoxCollider2D>();
-        GameManager.Instance.addIsland(new Island(gameObject, null, boxCol.bounds, new ArrayList()));
+        GameManager.Instance.addIsland(new Island(gameObject, boxCol.bounds, new ArrayList(), null));
     }
 
     // Update is called once per frame

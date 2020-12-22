@@ -7,29 +7,17 @@ public class Island
     private Bounds islandBounds;
     private ArrayList islandItems;
     private GameObject islandGO;
-    private GameObject minimapIsland;
+    private MinimapScript minimapIsland;
+    private float timeToDrown;
 
-    public Island(GameObject islandGO, GameObject minimapIsland, Bounds bounds, ArrayList items)
+    public Island(GameObject islandGO, Bounds bounds, ArrayList items, MinimapScript minimap)
     {
         islandBounds = bounds;
         islandItems = items;
         this.islandGO = islandGO;
-        this.minimapIsland = minimapIsland;
-    }
-
-    public bool isInBounds(Bounds bound)
-    {
-        if (islandBounds.Intersects(bound))
-        {
-            return false;
-        }
-        return true;
-    }
-
-    // TODO: currently only 1 bound (add more?)
-    public Bounds getBounds()
-    {
-        return islandBounds;
+        this.minimapIsland = minimap;
+        // timeToDrown = Random.Range(180, 360);
+        timeToDrown = Random.Range(5, 30);
     }
 
     public void collectItem(Item item)
@@ -37,8 +25,23 @@ public class Island
 
     }
 
+    public float getTimeToDrown()
+    {
+        return timeToDrown;
+    }
+
     public GameObject getIslandGO()
     {
         return islandGO;
+    }
+
+    public void setMinimap(MinimapScript minimap)
+    {
+        minimapIsland = minimap;
+    }
+
+    public MinimapScript getMinimap()
+    {
+        return minimapIsland;
     }
 }
