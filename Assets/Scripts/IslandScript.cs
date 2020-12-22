@@ -8,7 +8,7 @@ public class IslandScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.Instance.addIsland(new Island(gameObject, null, borderCollider.bounds, new ArrayList()));
+        GameManager.Instance.addIsland(new Island(gameObject, borderCollider.bounds, new ArrayList(), null));
     }
 
     // Update is called once per frame

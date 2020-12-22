@@ -67,10 +67,15 @@ public class GameManager : Singleton<GameManager>
         islands.Add(new Island(null, new Bounds(), null, minimap));
     }
 
+    public void changePlayerToIsland(int islandIdx)
+    {
+        playerOnIsland = islandIdx;
+        playerGO.transform.position = (islands[playerOnIsland] as Island).getIslandGO().transform.position;
+    }
+
     public void goNextIsland()
     {
-        playerOnIsland = (playerOnIsland + 1) % islands.Count;
-        playerGO.transform.position = (islands[playerOnIsland] as Island).getIslandGO().transform.position;
+        changePlayerToIsland((playerOnIsland + 1) % islands.Count);
     }
 
     public ArrayList getIslands()

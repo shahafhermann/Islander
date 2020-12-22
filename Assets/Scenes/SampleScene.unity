@@ -275,6 +275,7 @@ GameObject:
   - component: {fileID: 79601414}
   - component: {fileID: 79601416}
   - component: {fileID: 79601415}
+  - component: {fileID: 79601417}
   m_Layer: 5
   m_Name: Island1
   m_TagString: Untagged
@@ -339,6 +340,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79601413}
   m_CullTransparentMesh: 0
+--- !u!114 &79601417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79601413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47519f329cc8f8041911c9b8542f2569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &250362272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1408,6 +1421,7 @@ GameObject:
   - component: {fileID: 1122474452}
   - component: {fileID: 1122474454}
   - component: {fileID: 1122474453}
+  - component: {fileID: 1122474455}
   m_Layer: 5
   m_Name: Island2
   m_TagString: Untagged
@@ -1472,6 +1486,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122474451}
   m_CullTransparentMesh: 0
+--- !u!114 &1122474455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122474451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47519f329cc8f8041911c9b8542f2569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1198068657 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6818633985637379229, guid: bfe66cd34f07ebd4899a935ee10e3b7d, type: 3}
@@ -1649,6 +1675,7 @@ GameObject:
   - component: {fileID: 1551350696}
   - component: {fileID: 1551350698}
   - component: {fileID: 1551350697}
+  - component: {fileID: 1551350699}
   m_Layer: 5
   m_Name: Island3
   m_TagString: Untagged
@@ -1713,6 +1740,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551350695}
   m_CullTransparentMesh: 0
+--- !u!114 &1551350699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551350695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47519f329cc8f8041911c9b8542f2569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1589460017
 GameObject:
   m_ObjectHideFlags: 3
@@ -1811,6 +1850,7 @@ GameObject:
   - component: {fileID: 1773350568}
   - component: {fileID: 1773350570}
   - component: {fileID: 1773350569}
+  - component: {fileID: 1773350571}
   m_Layer: 5
   m_Name: Island5
   m_TagString: Untagged
@@ -1875,6 +1915,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773350567}
   m_CullTransparentMesh: 0
+--- !u!114 &1773350571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773350567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47519f329cc8f8041911c9b8542f2569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1779297007 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6818633985637379229, guid: bfe66cd34f07ebd4899a935ee10e3b7d, type: 3}
@@ -2232,6 +2284,7 @@ GameObject:
   - component: {fileID: 2102312838}
   - component: {fileID: 2102312840}
   - component: {fileID: 2102312839}
+  - component: {fileID: 2102312841}
   m_Layer: 5
   m_Name: Island4
   m_TagString: Untagged
@@ -2296,6 +2349,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102312837}
   m_CullTransparentMesh: 0
+--- !u!114 &2102312841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102312837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47519f329cc8f8041911c9b8542f2569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3275146708506020983
 PrefabInstance:
   m_ObjectHideFlags: 0
