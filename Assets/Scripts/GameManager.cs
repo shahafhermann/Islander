@@ -52,20 +52,20 @@ public class GameManager : Singleton<GameManager>
             goNextIsland();
     }
 
-    public void addMinimap(MinimapScript minimap)
-    {
-        foreach (Island island in islands)
-        {
-            if (island.getIslandGO() != null && island.getIslandGO().name.Equals(minimap.name))
-            {
-                island.setMinimap(minimap);
-                minimap.setIsland(island);
-                return;
-            }
-        }
-
-        islands.Add(new Island(null, new Bounds(), null, minimap));
-    }
+    // public void addMinimap(MinimapScript minimap)
+    // {
+    //     foreach (Island island in islands)
+    //     {
+    //         if (island.getIslandGO() != null && island.getIslandGO().name.Equals(minimap.name))
+    //         {
+    //             island.setMinimap(minimap);
+    //             minimap.setIsland(island);
+    //             return;
+    //         }
+    //     }
+    //
+    //     islands.Add(new Island(null, new Bounds(), null, minimap));
+    // }
 
     public void changePlayerToIsland(int islandIdx)
     {
