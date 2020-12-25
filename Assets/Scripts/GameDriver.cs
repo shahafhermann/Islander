@@ -20,7 +20,7 @@ public class GameDriver : MonoBehaviour
     public bool[] pickup;
     
     private Malfunction malfunctionFactory;
-    private (Item, Item) curMalfunction;
+    [HideInInspector] public (Item, Item) curMalfunction;
 
     public Image malfunctionWayPoint;
     private RectTransform _wayPointRectTransform;
@@ -39,6 +39,8 @@ public class GameDriver : MonoBehaviour
         if (temp) {  // TODO delete
             Debug.Log(curMalfunction.Item1.getIsland());
             Debug.Log(curMalfunction.Item1.getObject());
+            Debug.Log(curMalfunction.Item2.getIsland());
+            Debug.Log(curMalfunction.Item2.getObject());
             temp = false;
         }
         showWaypoints();
@@ -84,6 +86,7 @@ public class GameDriver : MonoBehaviour
             
             // Generate new malfunction:
             curMalfunction = malfunctionFactory.generateMalfunction();
+            temp = true; // TODO delete
         }
         else {  // Failed to fix
             // Tell the player that he's wrong
