@@ -9,6 +9,9 @@ public class GameManager : Singleton<GameManager>
     private int playerOnIsland;
     private float timeGameStarted;
 
+    [HideInInspector]
+    public Malfunction malfunctionFactory;
+
     public GameManager()
     {
         islands = new ArrayList();
