@@ -13,8 +13,8 @@ public class Malfunction {
     private Dictionary<Item, Tuple<Item, bool>> malfunctions = 
         new Dictionary<Item, Tuple<Item, bool>>();
 
-    private List<Item> malfunctionsList;
-    private Item lastMalfunction;
+    private List<Item> malfunctionsList = new List<Item>();
+    private Item lastMalfunction = null;
     
     public Malfunction(List<GameObjectMap> malfunctions, 
                        List<GameObjectMap> fixes, 
@@ -38,7 +38,7 @@ public class Malfunction {
         do {
             var indexOfMalfunctionToReturn = Random.Range(0, malfunctionsList.Count);
             malfunctionToReturn = malfunctionsList[indexOfMalfunctionToReturn];
-        } while (!malfunctionToReturn.Equals(lastMalfunction));;
+        } while (malfunctionToReturn.Equals(lastMalfunction));
 
         lastMalfunction = malfunctionToReturn;
         return (malfunctionToReturn, malfunctions[malfunctionToReturn].Item1);
