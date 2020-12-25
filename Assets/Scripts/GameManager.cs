@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,8 +10,7 @@ public class GameManager : Singleton<GameManager>
     private int playerOnIsland;
     private float timeGameStarted;
 
-    [HideInInspector]
-    public Malfunction malfunctionFactory;
+    [HideInInspector] public (Item, Item) malfunction;
 
     public GameManager()
     {
