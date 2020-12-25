@@ -23,6 +23,7 @@ public class GameDriver : MonoBehaviour
     private (Item, Item) curMalfunction;
 
     public Image malfunctionWayPoint;
+    private RectTransform _wayPointRectTransform;
     public Vector3 malfunctionWayPointOffset;
 
     private bool temp = true; // TODO delete
@@ -31,6 +32,7 @@ public class GameDriver : MonoBehaviour
     {
         malfunctionFactory = new Malfunction(malfunctionObjects, fixObjects, pickup);
         curMalfunction = malfunctionFactory.generateMalfunction();
+        _wayPointRectTransform = malfunctionWayPoint.GetComponent<RectTransform>();
     }
 
     private void Update() {
@@ -49,6 +51,7 @@ public class GameDriver : MonoBehaviour
     
     private void showWaypoints() {
         GameObject curMalfunctionIsland = curMalfunction.Item1.getIsland();
+        Vector3 islandPos = curMalfunctionIsland.transform.position;
         if (!isVisible(curMalfunctionIsland)) {  // (!curMalfunctionIsland.GetComponent<Renderer>().isVisible) {
             if (!malfunctionWayPoint.enabled) {
                 malfunctionWayPoint.enabled = true;
@@ -59,10 +62,15 @@ public class GameDriver : MonoBehaviour
             float minY = malfunctionWayPoint.GetPixelAdjustedRect().height / 2;
             float maxY = Screen.height - minY;
             
-            Vector2 pos = Camera.main.WorldToScreenPoint(curMalfunctionIsland.transform.position + malfunctionWayPointOffset);
+            Vector2 pos = Camera.main.WorldToScreenPoint(islandPos + malfunctionWayPointOffset);
             pos.x = Mathf.Clamp(pos.x, minX, maxX);
             pos.y = Mathf.Clamp(pos.y, minY, maxY);
             malfunctionWayPoint.transform.position = pos;
+            
+            // Angle
+            Vector3 dir = (islandPos - Camera.main.transform.position);
+            float angle = (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg) % 360;
+            _wayPointRectTransform.localEulerAngles = new Vector3(0, 0, angle);
         }
         else if (malfunctionWayPoint.enabled) {
             malfunctionWayPoint.enabled = false;
