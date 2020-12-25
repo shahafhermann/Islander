@@ -184,6 +184,81 @@ PolygonCollider2D:
       - {x: -1.4846897, y: -4.0847225}
       - {x: 2.3553963, y: -0.8318291}
       - {x: 6.4086046, y: -2.4051647}
+--- !u!1 &6012765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6012768}
+  - component: {fileID: 6012767}
+  - component: {fileID: 6012766}
+  m_Layer: 5
+  m_Name: WayPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &6012766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6012765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: 0.060156345, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &6012767
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6012765}
+  m_CullTransparentMesh: 0
+--- !u!224 &6012768
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6012765}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1817428461}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -461.8, y: -68.8}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &84284176
 GameObject:
   m_ObjectHideFlags: 0
@@ -2513,7 +2588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1522050504
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3099,7 +3174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -3142,6 +3217,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1522050504}
+  - {fileID: 6012768}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3492,30 +3568,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   malfunctionObjects:
-  - {fileID: 878594699}
-  - {fileID: 84284176}
-  - {fileID: 251283017}
-  - {fileID: 1728805818}
-  - {fileID: 1061712180}
-  - {fileID: 572793955}
-  - {fileID: 1400899230}
-  - {fileID: 1019507323}
-  - {fileID: 2091930178}
-  - {fileID: 1886585609}
-  - {fileID: 1980804105}
+  - Item1: {fileID: 878594699}
+    Item2: {fileID: 743098221}
+  - Item1: {fileID: 84284176}
+    Item2: {fileID: 112363}
+  - Item1: {fileID: 251283017}
+    Item2: {fileID: 857817780}
+  - Item1: {fileID: 1728805818}
+    Item2: {fileID: 1225474981}
+  - Item1: {fileID: 1061712180}
+    Item2: {fileID: 1070358347}
+  - Item1: {fileID: 572793955}
+    Item2: {fileID: 112363}
+  - Item1: {fileID: 1400899230}
+    Item2: {fileID: 743098221}
+  - Item1: {fileID: 1019507323}
+    Item2: {fileID: 1225474981}
+  - Item1: {fileID: 2091930178}
+    Item2: {fileID: 1070358347}
+  - Item1: {fileID: 1886585609}
+    Item2: {fileID: 857817780}
+  - Item1: {fileID: 1980804105}
+    Item2: {fileID: 112363}
   fixObjects:
-  - {fileID: 0}
-  - {fileID: 99935504}
-  - {fileID: 0}
-  - {fileID: 696522369}
-  - {fileID: 1164686910}
-  - {fileID: 256501289}
-  - {fileID: 1485000798}
-  - {fileID: 836542419}
-  - {fileID: 1594333230}
-  - {fileID: 1545866147}
-  - {fileID: 1926286078}
+  - Item1: {fileID: 0}
+    Item2: {fileID: 0}
+  - Item1: {fileID: 99935504}
+    Item2: {fileID: 1225474981}
+  - Item1: {fileID: 0}
+    Item2: {fileID: 0}
+  - Item1: {fileID: 696522369}
+    Item2: {fileID: 857817780}
+  - Item1: {fileID: 1164686910}
+    Item2: {fileID: 743098221}
+  - Item1: {fileID: 256501289}
+    Item2: {fileID: 1070358347}
+  - Item1: {fileID: 1485000798}
+    Item2: {fileID: 112363}
+  - Item1: {fileID: 836542419}
+    Item2: {fileID: 1070358347}
+  - Item1: {fileID: 1594333230}
+    Item2: {fileID: 743098221}
+  - Item1: {fileID: 1545866147}
+    Item2: {fileID: 1225474981}
+  - Item1: {fileID: 1926286078}
+    Item2: {fileID: 112363}
   pickup: 0001000101010101010000
+  malfunctionWayPoint: {fileID: 6012766}
+  malfunctionWayPointOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &2013523928
 Transform:
   m_ObjectHideFlags: 0
