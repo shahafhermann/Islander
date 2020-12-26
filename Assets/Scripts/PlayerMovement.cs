@@ -2,19 +2,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerMovement : MonoBehaviour {
 
     public GameDriver gameDriver;
     
     public KeyCode interactKey;
-    
+    public KeyCode zoomOutKey;
+
     [Range(0.0f, 10.0f)]
     public float moveSpeed = 6.5f;
+    public const float Max_Zoom_Out = 10;
+    public const float Default_Zoom = 5;
+
     public Rigidbody2D rb;
     public Animator playerAnimator;  // TODO: uncomment when animations are available
-    private Bounds curIslandBounds;
-    
+    public CinemachineVirtualCamera playerCamera;
+
     private Vector2 _movement;
 
     private GameObject inventory;
@@ -26,21 +31,27 @@ public class PlayerMovement : MonoBehaviour {
         if (rb == null) {
             rb = gameObject.GetComponent<Rigidbody2D>();
         }
-        GameManager.Instance.setPlayer(gameObject);
     }
 
     void Update() {
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GameManager.Instance.goNextIsland();
-        } else if (Input.GetKeyDown(interactKey)) {
+        if (Input.GetKeyDown(interactKey)) {
             interact();
             Debug.Log("Interacting.");  // TODO delete
             if (inventory) {
                 Debug.Log("Inventory now has: " + inventory.name);
             }
+        }
+        if (Input.GetKey(zoomOutKey) && playerCamera.m_Lens.OrthographicSize < Max_Zoom_Out)
+        {
+            float newSize = Mathf.Min(playerCamera.m_Lens.OrthographicSize + 0.1f, Max_Zoom_Out);
+            playerCamera.m_Lens.OrthographicSize = newSize;
+        }
+        if (!Input.GetKey(zoomOutKey) && playerCamera.m_Lens.OrthographicSize > Default_Zoom)
+        {
+            float newSize = Mathf.Max(playerCamera.m_Lens.OrthographicSize - 0.2f, Default_Zoom);
+            playerCamera.m_Lens.OrthographicSize = newSize;
         }
         // Animations control.
         playerAnimator.SetFloat("Horizontal", _movement.x);
