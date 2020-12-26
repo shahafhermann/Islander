@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour {
     public const float Default_Zoom = 5;
 
     public Rigidbody2D rb;
-    public Animator playerAnimator;  // TODO: uncomment when animations are available
+    public Animator playerAnimator;
     public CinemachineVirtualCamera playerCamera;
 
     private Vector2 _movement;
@@ -133,20 +133,26 @@ public class PlayerMovement : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag.Equals("PickupFixes")) {
             curNearPickupFix = other.gameObject;
+            other.gameObject.GetComponent<Animator>().SetTrigger("EnteredRange");
         } else if (other.gameObject.tag.Equals("StaticFixes")) {
             curNearStaticFix = other.gameObject;
+            other.gameObject.GetComponent<Animator>().SetTrigger("EnteredRange");
         } else if (other.gameObject.tag.Equals("Malfunctions")) {
             curNearMalFunction = other.gameObject;
+            other.gameObject.GetComponent<Animator>().SetTrigger("EnteredRange");
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         if (other.gameObject.tag.Equals("PickupFixes")) {
             curNearPickupFix = null;
+            other.gameObject.GetComponent<Animator>().SetTrigger("LeftRange");
         } else if (other.gameObject.tag.Equals("StaticFixes")) {
             curNearStaticFix = null;
+            other.gameObject.GetComponent<Animator>().SetTrigger("LeftRange");
         } else if (other.gameObject.tag.Equals("Malfunctions")) {
             curNearMalFunction = null;
+            other.gameObject.GetComponent<Animator>().SetTrigger("LeftRange");
         }
     }
 }
