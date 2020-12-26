@@ -10,7 +10,7 @@ public class GameManager : Singleton<GameManager>
     private int playerOnIsland;
     private float timeGameStarted;
 
-    [HideInInspector] public (Item, Item) curMalfunction;
+    // [HideInInspector] public (Item, Item) curMalfunction;
 
     public GameManager()
     {
