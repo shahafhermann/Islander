@@ -593,6 +593,7 @@ GameObject:
   - component: {fileID: 84284177}
   - component: {fileID: 84284178}
   - component: {fileID: 84284179}
+  - component: {fileID: 84284180}
   m_Layer: 0
   m_Name: Computer
   m_TagString: Malfunctions
@@ -681,6 +682,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &84284180
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84284176}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &99935504
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +712,7 @@ GameObject:
   - component: {fileID: 99935506}
   - component: {fileID: 99935505}
   - component: {fileID: 99935507}
+  - component: {fileID: 99935508}
   m_Layer: 0
   m_Name: HardDrive
   m_TagString: PickupFixes
@@ -780,6 +801,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &99935508
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99935504}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &216223841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1079,7 @@ GameObject:
   - component: {fileID: 251283018}
   - component: {fileID: 251283019}
   - component: {fileID: 251283020}
+  - component: {fileID: 251283021}
   m_Layer: 0
   m_Name: HackedComputer
   m_TagString: Malfunctions
@@ -1127,6 +1168,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &251283021
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251283017}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &256501289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,6 +1198,7 @@ GameObject:
   - component: {fileID: 256501290}
   - component: {fileID: 256501291}
   - component: {fileID: 256501292}
+  - component: {fileID: 256501293}
   m_Layer: 0
   m_Name: Screwdriver
   m_TagString: PickupFixes
@@ -1226,6 +1287,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &256501293
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256501289}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &292501100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,6 +1937,7 @@ GameObject:
   - component: {fileID: 572793956}
   - component: {fileID: 572793957}
   - component: {fileID: 572793958}
+  - component: {fileID: 572793959}
   m_Layer: 0
   m_Name: LeakingPipe
   m_TagString: Malfunctions
@@ -1945,6 +2026,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &572793959
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572793955}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &578518611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2082,6 +2182,7 @@ GameObject:
   - component: {fileID: 696522370}
   - component: {fileID: 696522371}
   - component: {fileID: 696522372}
+  - component: {fileID: 696522373}
   m_Layer: 0
   m_Name: JumpStartCables
   m_TagString: PickupFixes
@@ -2170,6 +2271,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &696522373
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696522369}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &743098221 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5228748778049763815, guid: bfe66cd34f07ebd4899a935ee10e3b7d, type: 3}
@@ -2298,6 +2418,7 @@ GameObject:
   - component: {fileID: 836542420}
   - component: {fileID: 836542421}
   - component: {fileID: 836542422}
+  - component: {fileID: 836542423}
   m_Layer: 0
   m_Name: OilSpray
   m_TagString: PickupFixes
@@ -2386,6 +2507,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &836542423
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836542419}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &857817780 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5228748778049763815, guid: bfe66cd34f07ebd4899a935ee10e3b7d, type: 3}
@@ -2688,6 +2828,7 @@ GameObject:
   - component: {fileID: 878594700}
   - component: {fileID: 878594701}
   - component: {fileID: 878594702}
+  - component: {fileID: 878594703}
   m_Layer: 0
   m_Name: LoosePowerSocket
   m_TagString: Malfunctions
@@ -2776,6 +2917,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &878594703
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878594699}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &911660425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2944,6 +3104,7 @@ GameObject:
   - component: {fileID: 1019507324}
   - component: {fileID: 1019507325}
   - component: {fileID: 1019507326}
+  - component: {fileID: 1019507327}
   m_Layer: 0
   m_Name: Rust
   m_TagString: Malfunctions
@@ -3032,6 +3193,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &1019507327
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019507323}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1061712180
 GameObject:
   m_ObjectHideFlags: 0
@@ -3043,6 +3223,7 @@ GameObject:
   - component: {fileID: 1061712181}
   - component: {fileID: 1061712182}
   - component: {fileID: 1061712183}
+  - component: {fileID: 1061712184}
   m_Layer: 0
   m_Name: CloggedPipe
   m_TagString: Malfunctions
@@ -3131,6 +3312,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &1061712184
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061712180}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1070358347 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5228748778049763815, guid: bfe66cd34f07ebd4899a935ee10e3b7d, type: 3}
@@ -3408,6 +3608,7 @@ GameObject:
   - component: {fileID: 1164686911}
   - component: {fileID: 1164686912}
   - component: {fileID: 1164686913}
+  - component: {fileID: 1164686914}
   m_Layer: 0
   m_Name: Plunger
   m_TagString: PickupFixes
@@ -3496,6 +3697,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &1164686914
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164686910}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1198068657 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6818633985637379229, guid: bfe66cd34f07ebd4899a935ee10e3b7d, type: 3}
@@ -3838,6 +4058,7 @@ GameObject:
   - component: {fileID: 1400899231}
   - component: {fileID: 1400899232}
   - component: {fileID: 1400899233}
+  - component: {fileID: 1400899234}
   m_Layer: 0
   m_Name: Engine
   m_TagString: Malfunctions
@@ -3926,6 +4147,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &1400899234
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400899230}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1449247122
 GameObject:
   m_ObjectHideFlags: 0
@@ -4004,6 +4244,7 @@ GameObject:
   - component: {fileID: 1485000799}
   - component: {fileID: 1485000800}
   - component: {fileID: 1485000801}
+  - component: {fileID: 1485000802}
   m_Layer: 0
   m_Name: Cogwheel
   m_TagString: PickupFixes
@@ -4092,6 +4333,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &1485000802
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485000798}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1545866147
 GameObject:
   m_ObjectHideFlags: 0
@@ -4103,6 +4363,7 @@ GameObject:
   - component: {fileID: 1545866148}
   - component: {fileID: 1545866149}
   - component: {fileID: 1545866150}
+  - component: {fileID: 1545866151}
   m_Layer: 0
   m_Name: ResetButton
   m_TagString: StaticFixes
@@ -4191,6 +4452,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &1545866151
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545866147}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1587704108
 GameObject:
   m_ObjectHideFlags: 0
@@ -4356,6 +4636,7 @@ GameObject:
   - component: {fileID: 1594333231}
   - component: {fileID: 1594333232}
   - component: {fileID: 1594333233}
+  - component: {fileID: 1594333234}
   m_Layer: 0
   m_Name: Poison
   m_TagString: PickupFixes
@@ -4444,6 +4725,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &1594333234
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594333230}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1728805818
 GameObject:
   m_ObjectHideFlags: 0
@@ -4455,6 +4755,7 @@ GameObject:
   - component: {fileID: 1728805819}
   - component: {fileID: 1728805820}
   - component: {fileID: 1728805821}
+  - component: {fileID: 1728805822}
   m_Layer: 0
   m_Name: Battery
   m_TagString: Malfunctions
@@ -4543,6 +4844,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &1728805822
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728805818}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1779297007 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6818633985637379229, guid: bfe66cd34f07ebd4899a935ee10e3b7d, type: 3}
@@ -4627,6 +4947,7 @@ GameObject:
   - component: {fileID: 1817428460}
   - component: {fileID: 1817428459}
   - component: {fileID: 1817428458}
+  - component: {fileID: 1817428462}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4715,6 +5036,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &1817428462
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817428457}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7f95b9897ad64d5eb77a4f9188c91c4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1851444069
 GameObject:
   m_ObjectHideFlags: 0
@@ -4945,6 +5285,7 @@ GameObject:
   - component: {fileID: 1886585610}
   - component: {fileID: 1886585611}
   - component: {fileID: 1886585612}
+  - component: {fileID: 1886585613}
   m_Layer: 0
   m_Name: Router
   m_TagString: Malfunctions
@@ -5033,6 +5374,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &1886585613
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886585609}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1926286078
 GameObject:
   m_ObjectHideFlags: 0
@@ -5044,6 +5404,7 @@ GameObject:
   - component: {fileID: 1926286080}
   - component: {fileID: 1926286079}
   - component: {fileID: 1926286081}
+  - component: {fileID: 1926286082}
   m_Layer: 0
   m_Name: PowerSwitch
   m_TagString: StaticFixes
@@ -5132,6 +5493,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &1926286082
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926286078}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1928233380
 GameObject:
   m_ObjectHideFlags: 0
@@ -5176,6 +5556,7 @@ GameObject:
   - component: {fileID: 1980804106}
   - component: {fileID: 1980804107}
   - component: {fileID: 1980804108}
+  - component: {fileID: 1980804109}
   m_Layer: 0
   m_Name: ShortCircuit
   m_TagString: Malfunctions
@@ -5264,6 +5645,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &1980804109
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980804105}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2013523926
 GameObject:
   m_ObjectHideFlags: 0
@@ -5298,77 +5698,66 @@ MonoBehaviour:
     malfunctionObject: {fileID: 878594699}
     fixIsland: {fileID: 0}
     fixObject: {fileID: 0}
-    isPickupFix: 0
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
   - malfunctionIsland: {fileID: 112363}
     malfunctionObject: {fileID: 84284176}
     fixIsland: {fileID: 1225474981}
     fixObject: {fileID: 99935504}
-    isPickupFix: 1
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
   - malfunctionIsland: {fileID: 857817780}
     malfunctionObject: {fileID: 251283017}
     fixIsland: {fileID: 0}
     fixObject: {fileID: 0}
-    isPickupFix: 0
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
   - malfunctionIsland: {fileID: 1225474981}
     malfunctionObject: {fileID: 1728805818}
     fixIsland: {fileID: 857817780}
     fixObject: {fileID: 696522369}
-    isPickupFix: 1
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
   - malfunctionIsland: {fileID: 1070358347}
     malfunctionObject: {fileID: 1061712180}
     fixIsland: {fileID: 743098221}
     fixObject: {fileID: 1164686910}
-    isPickupFix: 1
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
   - malfunctionIsland: {fileID: 112363}
     malfunctionObject: {fileID: 572793955}
     fixIsland: {fileID: 1070358347}
     fixObject: {fileID: 256501289}
-    isPickupFix: 1
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
   - malfunctionIsland: {fileID: 743098221}
     malfunctionObject: {fileID: 1400899230}
     fixIsland: {fileID: 112363}
     fixObject: {fileID: 1485000798}
-    isPickupFix: 1
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
   - malfunctionIsland: {fileID: 1225474981}
     malfunctionObject: {fileID: 1019507323}
     fixIsland: {fileID: 1070358347}
     fixObject: {fileID: 836542419}
-    isPickupFix: 1
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
   - malfunctionIsland: {fileID: 1070358347}
     malfunctionObject: {fileID: 2091930178}
     fixIsland: {fileID: 743098221}
     fixObject: {fileID: 1594333230}
-    isPickupFix: 1
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
   - malfunctionIsland: {fileID: 857817780}
     malfunctionObject: {fileID: 1886585609}
     fixIsland: {fileID: 1225474981}
     fixObject: {fileID: 1545866147}
-    isPickupFix: 0
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
   - malfunctionIsland: {fileID: 112363}
     malfunctionObject: {fileID: 1980804105}
     fixIsland: {fileID: 112363}
     fixObject: {fileID: 1926286078}
-    isPickupFix: 0
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
   curMalfunction:
@@ -5376,7 +5765,6 @@ MonoBehaviour:
     malfunctionObject: {fileID: 0}
     fixIsland: {fileID: 0}
     fixObject: {fileID: 0}
-    isPickupFix: 0
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
   malfunctionWayPoint: {fileID: 6012766}
@@ -5473,6 +5861,7 @@ GameObject:
   - component: {fileID: 2091930179}
   - component: {fileID: 2091930180}
   - component: {fileID: 2091930181}
+  - component: {fileID: 2091930182}
   m_Layer: 0
   m_Name: Rats
   m_TagString: Malfunctions
@@ -5561,6 +5950,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.16}
   m_Direction: 0
+--- !u!95 &2091930182
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091930178}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cee8a6ce701d462bab9e88c07f6f148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2140762044
 GameObject:
   m_ObjectHideFlags: 0
