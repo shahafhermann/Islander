@@ -11,7 +11,7 @@ public struct Malfunction
     public GameObject malfunctionObject;
     public GameObject fixIsland;
     public GameObject fixObject;
-    public bool isPickupFix;
+    // public bool isPickupFix;  // Not needed after all, using object tags instead.
     public Sprite malfunctionImage;
     public Sprite fixImage;
 }
