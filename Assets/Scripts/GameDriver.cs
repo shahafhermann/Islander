@@ -5,22 +5,23 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [Serializable]
-public struct GameObjectMap
+public struct Malfunction
 {
-    public GameObject Item1;
-    public GameObject Item2;
+    public GameObject malfunctionIsland;
+    public GameObject malfunctionObject;
+    public GameObject fixIsland;
+    public GameObject fixObject;
+    public bool isPickupFix;
+    public Sprite malfunctionImage;
+    public Sprite fixImage;
 }
 
 public class GameDriver : MonoBehaviour
 {
-    // These arrays are defined through the GameDriver inspector, and should be filled "in parallel",
-    // so index 'i' in all of them refers to the same thing.
-    public List<GameObjectMap> malfunctionObjects;
-    public List<GameObjectMap> fixObjects;
-    public bool[] pickup;
+    public List<Malfunction> malfunctionsList;
     
-    private Malfunction malfunctionFactory;
-    [HideInInspector] public (Item, Item) curMalfunction;
+    private MalfunctionFactory malfunctionFactory;
+    [HideInInspector] public Malfunction curMalfunction;
 
     public Image malfunctionWayPoint;
     private RectTransform _wayPointRectTransform;
@@ -30,17 +31,17 @@ public class GameDriver : MonoBehaviour
 
     void Start()
     {
-        malfunctionFactory = new Malfunction(malfunctionObjects, fixObjects, pickup);
+        malfunctionFactory = new MalfunctionFactory(malfunctionsList);
         curMalfunction = malfunctionFactory.generateMalfunction();
         _wayPointRectTransform = malfunctionWayPoint.GetComponent<RectTransform>();
     }
 
     private void Update() {
         if (temp) {  // TODO delete
-            Debug.Log(curMalfunction.Item1.getIsland());
-            Debug.Log(curMalfunction.Item1.getObject());
-            Debug.Log(curMalfunction.Item2.getIsland());
-            Debug.Log(curMalfunction.Item2.getObject());
+            Debug.Log(curMalfunction.malfunctionIsland);
+            Debug.Log(curMalfunction.malfunctionObject);
+            Debug.Log(curMalfunction.fixIsland);
+            Debug.Log(curMalfunction.fixObject);
             temp = false;
         }
         showWaypoints();
@@ -52,9 +53,8 @@ public class GameDriver : MonoBehaviour
     }
     
     private void showWaypoints() {
-        GameObject curMalfunctionIsland = curMalfunction.Item1.getIsland();
-        Vector3 islandPos = curMalfunctionIsland.transform.position;
-        if (!isVisible(curMalfunctionIsland)) {  // (!curMalfunctionIsland.GetComponent<Renderer>().isVisible) {
+        Vector3 islandPos = curMalfunction.malfunctionIsland.transform.position;
+        if (!isVisible(curMalfunction.malfunctionIsland)) {
             if (!malfunctionWayPoint.enabled) {
                 malfunctionWayPoint.enabled = true;
             }

@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour {
 
     public GameDriver gameDriver;
-    
+
     public KeyCode interactKey;
     public KeyCode zoomOutKey;
 
@@ -21,7 +22,9 @@ public class PlayerMovement : MonoBehaviour {
     public CinemachineVirtualCamera playerCamera;
 
     private Vector2 _movement;
+    private bool isZooming = false;
 
+    public Image inventoryImage;
     private GameObject inventory;
     private GameObject curNearPickupFix;
     private GameObject curNearStaticFix;
@@ -34,8 +37,11 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void Update() {
-        _movement.x = Input.GetAxisRaw("Horizontal");
-        _movement.y = Input.GetAxisRaw("Vertical");
+        if (!isZooming) {
+            _movement.x = Input.GetAxisRaw("Horizontal");
+            _movement.y = Input.GetAxisRaw("Vertical");
+        }
+
         if (Input.GetKeyDown(interactKey)) {
             interact();
             Debug.Log("Interacting.");  // TODO delete
@@ -43,13 +49,13 @@ public class PlayerMovement : MonoBehaviour {
                 Debug.Log("Inventory now has: " + inventory.name);
             }
         }
-        if (Input.GetKey(zoomOutKey) && playerCamera.m_Lens.OrthographicSize < Max_Zoom_Out)
-        {
+        if (Input.GetKey(zoomOutKey) && playerCamera.m_Lens.OrthographicSize < Max_Zoom_Out) {
+            isZooming = true;
             float newSize = Mathf.Min(playerCamera.m_Lens.OrthographicSize + 0.1f, Max_Zoom_Out);
             playerCamera.m_Lens.OrthographicSize = newSize;
         }
-        if (!Input.GetKey(zoomOutKey) && playerCamera.m_Lens.OrthographicSize > Default_Zoom)
-        {
+        if (!Input.GetKey(zoomOutKey) && playerCamera.m_Lens.OrthographicSize > Default_Zoom) {
+            isZooming = false;
             float newSize = Mathf.Max(playerCamera.m_Lens.OrthographicSize - 0.2f, Default_Zoom);
             playerCamera.m_Lens.OrthographicSize = newSize;
         }
@@ -60,15 +66,23 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * _movement);
+        if (!isZooming) {
+            rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * _movement);
+        }
     }
 
     private void interact() {
         if (curNearMalFunction) {  // If near a malfunction object
-            // Check the malfunction. If it doesnt require an item, solve(true).
-            GameObject fix = gameDriver.curMalfunction.Item2.getObject();
+            // Check the malfunction. If it doesnt require an item:
+            // If this is the current malfunction, solve(true). Else solve(false).
+            GameObject fix = gameDriver.curMalfunction.fixObject;
             if (fix.Equals(null)) {
-                gameDriver.solve(true);
+                if (gameDriver.curMalfunction.malfunctionObject.Equals(curNearMalFunction)) {
+                    gameDriver.solve(true);
+                }
+                else {
+                    gameDriver.solve(false);
+                }
             } 
             // Else, if it does require an item but not a pickup, solve(false).
             else if (fix.tag.Equals("StaticFixes")) {
@@ -80,6 +94,7 @@ public class PlayerMovement : MonoBehaviour {
             else if (fix.tag.Equals("PickupFixes")) {
                 if (inventory && fix.Equals(inventory)) {
                     inventory = null;
+                    inventoryImage.sprite = null;  // TODO: get a default empty inventory image
                     fix.SetActive(true);
                     gameDriver.solve(true);
                 }
@@ -96,9 +111,11 @@ public class PlayerMovement : MonoBehaviour {
             // Either way, put the new item in the inventory and disable it's image.
             inventory = curNearPickupFix;
             curNearPickupFix.SetActive(false);
+            // Update inventory image
+            inventoryImage.sprite = inventory.GetComponent<SpriteRenderer>().sprite;
         } else if (curNearStaticFix) {  // Else, if near a static fix
             // Check the malfunction fix. If it doesnt require an item, solve(false).
-            GameObject fix = gameDriver.curMalfunction.Item2.getObject();
+            GameObject fix = gameDriver.curMalfunction.fixObject;
             if (fix.Equals(null)) {
                 gameDriver.solve(false);
             }
