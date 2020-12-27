@@ -14,6 +14,9 @@ public struct Malfunction
     // public bool isPickupFix;  // Not needed after all, using object tags instead.
     public Sprite malfunctionImage;
     public Sprite fixImage;
+
+    public float startedAt; // when the malfunction started
+    //public float totalTime; // how long until malfunction can no longer be repaired
 }
 
 public class GameDriver : MonoBehaviour
@@ -27,16 +30,28 @@ public class GameDriver : MonoBehaviour
     private RectTransform _wayPointRectTransform;
     public Vector3 malfunctionWayPointOffset;
 
+    public float timeGameStarted; // time when the game actually started
+
     private bool temp = true; // TODO delete
 
     void Start()
     {
         malfunctionFactory = new MalfunctionFactory(malfunctionsList);
         curMalfunction = malfunctionFactory.generateMalfunction();
+        curMalfunction.startedAt = Time.time;
         _wayPointRectTransform = malfunctionWayPoint.GetComponent<RectTransform>();
+        timeGameStarted = -1;
+
+        GameManager.Instance.setGameDriver(this); // maybe not needed, set to game manager so it can be used staticly (GameManager.Instance...)
     }
 
     private void Update() {
+        // set start time on first update when game actually starts
+        if(timeGameStarted == -1)
+        {
+            timeGameStarted = Time.time;
+        }
+
         if (temp) {  // TODO delete
             Debug.Log(curMalfunction.malfunctionIsland);
             Debug.Log(curMalfunction.malfunctionObject);
@@ -86,6 +101,7 @@ public class GameDriver : MonoBehaviour
             
             // Generate new malfunction:
             curMalfunction = malfunctionFactory.generateMalfunction();
+            curMalfunction.startedAt = Time.time;
             temp = true; // TODO delete
         }
         else {  // Failed to fix

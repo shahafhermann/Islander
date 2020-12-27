@@ -7,10 +7,16 @@ public class GameManager : Singleton<GameManager>
 {
     public float perc;
     private float timeGameStarted;
+    private GameDriver gameDriver;
 
     public GameManager()
-    {         
+    {
         timeGameStarted = -1;
+    }
+
+    public void setGameDriver(GameDriver gameDriver)
+    {
+        this.gameDriver = gameDriver;
     }
 
     public float getTimeStarted()
