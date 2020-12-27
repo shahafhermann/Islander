@@ -4,28 +4,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[Serializable]
-public struct Malfunction
-{
-    public GameObject malfunctionIsland;
-    public GameObject malfunctionObject;
-    public GameObject fixIsland;
-    public GameObject fixObject;
-    // public bool isPickupFix;  // Not needed after all, using object tags instead.
-    public Sprite malfunctionImage;
-    public Sprite fixImage;
-    public float startedAt; // when the malfunction started
-    //public float totalTime; // how long until malfunction can no longer be repaired
-}
+// [Serializable]
+// public struct Malfunction
+// {
+//     public GameObject malfunctionIsland;
+//     public GameObject malfunctionObject;
+//     public GameObject fixIsland;
+//     public GameObject fixObject;
+//     // public bool isPickupFix;  // Not needed after all, using object tags instead.
+//     public Sprite malfunctionImage;
+//     public Sprite fixImage;
+//     public float startedAt; // when the malfunction started
+//     //public float totalTime; // how long until malfunction can no longer be repaired
+//     [HideInInspector] public bool originIslandDrowned;  // Will be true if the island has drowned.
+// }
 
 public class GameDriver : MonoBehaviour
 {
     public List<Island> islands;
-    
     public List<Malfunction> malfunctionsList;
     private MalfunctionFactory malfunctionFactory;
     [HideInInspector] public Malfunction curMalfunction;
     private Island curIsland;
+
+    public int maxDrownedAllowed = 3;
+    private int curDrowned = 0;
 
     public Image malfunctionWayPoint;
     private RectTransform _wayPointRectTransform;
@@ -38,17 +41,20 @@ public class GameDriver : MonoBehaviour
     void Start()
     {
         malfunctionFactory = new MalfunctionFactory(malfunctionsList);
-        curMalfunction = malfunctionFactory.generateMalfunction();
-        curMalfunction.startedAt = Time.time;
+        newMalfunction();
         _wayPointRectTransform = malfunctionWayPoint.GetComponent<RectTransform>();
         timeGameStarted = -1;
-        
-        setCurrentIsland();
 
         GameManager.Instance.setGameDriver(this); // maybe not needed, set to game manager so it can be used staticly (GameManager.Instance...)
+        
+        InvokeRepeating(nameof(sinkIsland), 0f, 0.1f);
     }
 
     private void Update() {
+        if (curDrowned == maxDrownedAllowed) {
+            // TODO end game
+        }
+        
         // set start time on first update when game actually starts
         if(timeGameStarted == -1)
         {
@@ -63,9 +69,13 @@ public class GameDriver : MonoBehaviour
             temp = false;
         }
         
-        
+        // TODO insert sink with timer
         
         showWaypoints();
+    }
+
+    private void sinkIsland() {
+        curIsland.increaseSink();
     }
 
     private bool isVisible(GameObject go) {
@@ -103,19 +113,29 @@ public class GameDriver : MonoBehaviour
     public void solve(bool success) {
         if (success) {
             // Steps to reduce flooding go here:
-            curIsland.reduceSink();
+            curIsland.reduceSink(0.25f);
             
             // Generate new malfunction:
-            curMalfunction = malfunctionFactory.generateMalfunction();
-            curMalfunction.startedAt = Time.time;
-            setCurrentIsland();
-            temp = true; // TODO delete
+            newMalfunction();
         }
         else {  // Failed to fix
             // Tell the player that he's wrong
-            // Steps to make the flooding worse
-            curIsland.increaseSink();
+            // Make the flooding worse
+            curIsland.increaseSink(0.25f);
+            // If the island has drowned, count it as a strike, block the island and generate a new malfunction.
+            if (curIsland.isDrowned()) {
+                curDrowned++;
+                // TODO maybe give a global timer penalty?
+                newMalfunction();
+            }
         }
+    }
+
+    private void newMalfunction() {
+        curMalfunction = malfunctionFactory.generateMalfunction();
+        curMalfunction.startedAt = Time.time;
+        setCurrentIsland();
+        temp = true; // TODO delete
     }
 
     private void setCurrentIsland() {
