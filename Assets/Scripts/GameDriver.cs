@@ -14,17 +14,18 @@ public struct Malfunction
     // public bool isPickupFix;  // Not needed after all, using object tags instead.
     public Sprite malfunctionImage;
     public Sprite fixImage;
-
     public float startedAt; // when the malfunction started
     //public float totalTime; // how long until malfunction can no longer be repaired
 }
 
 public class GameDriver : MonoBehaviour
 {
-    public List<Malfunction> malfunctionsList;
+    public List<Island> islands;
     
+    public List<Malfunction> malfunctionsList;
     private MalfunctionFactory malfunctionFactory;
     [HideInInspector] public Malfunction curMalfunction;
+    private Island curIsland;
 
     public Image malfunctionWayPoint;
     private RectTransform _wayPointRectTransform;
@@ -41,6 +42,8 @@ public class GameDriver : MonoBehaviour
         curMalfunction.startedAt = Time.time;
         _wayPointRectTransform = malfunctionWayPoint.GetComponent<RectTransform>();
         timeGameStarted = -1;
+        
+        setCurrentIsland();
 
         GameManager.Instance.setGameDriver(this); // maybe not needed, set to game manager so it can be used staticly (GameManager.Instance...)
     }
@@ -59,6 +62,9 @@ public class GameDriver : MonoBehaviour
             Debug.Log(curMalfunction.fixObject);
             temp = false;
         }
+        
+        
+        
         showWaypoints();
     }
 
@@ -97,16 +103,27 @@ public class GameDriver : MonoBehaviour
     public void solve(bool success) {
         if (success) {
             // Steps to reduce flooding go here:
-            
+            curIsland.reduceSink();
             
             // Generate new malfunction:
             curMalfunction = malfunctionFactory.generateMalfunction();
             curMalfunction.startedAt = Time.time;
+            setCurrentIsland();
             temp = true; // TODO delete
         }
         else {  // Failed to fix
             // Tell the player that he's wrong
             // Steps to make the flooding worse
+            curIsland.increaseSink();
+        }
+    }
+
+    private void setCurrentIsland() {
+        foreach (var island in islands) {
+            if (island.getIsland().Equals(curMalfunction.malfunctionIsland)) {
+                curIsland = island;
+                break;
+            }
         }
     }
 }

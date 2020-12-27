@@ -654,7 +654,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -759,7 +759,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1144,7 +1144,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1263,7 +1263,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1637,8 +1637,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013740587952, guid: f7ba1e225e2c1d64aa70c0ab830b601e, type: 3}
+      propertyPath: testSinkPercentage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7ba1e225e2c1d64aa70c0ab830b601e, type: 3}
+--- !u!114 &384214755 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114000013740587952, guid: f7ba1e225e2c1d64aa70c0ab830b601e, type: 3}
+  m_PrefabInstance: {fileID: 384214754}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8829f965957cc3046a2feba774f2db42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &515864137
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,7 +2086,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2320,7 +2335,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2556,7 +2571,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2966,7 +2981,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3170,8 +3185,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013740587952, guid: f7ba1e225e2c1d64aa70c0ab830b601e, type: 3}
+      propertyPath: testSinkPercentage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7ba1e225e2c1d64aa70c0ab830b601e, type: 3}
+--- !u!114 &932428950 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114000013740587952, guid: f7ba1e225e2c1d64aa70c0ab830b601e, type: 3}
+  m_PrefabInstance: {fileID: 932428949}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8829f965957cc3046a2feba774f2db42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &953536647
 GameObject:
   m_ObjectHideFlags: 0
@@ -3302,8 +3332,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013740587952, guid: f7ba1e225e2c1d64aa70c0ab830b601e, type: 3}
+      propertyPath: testSinkPercentage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7ba1e225e2c1d64aa70c0ab830b601e, type: 3}
+--- !u!114 &977009461 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114000013740587952, guid: f7ba1e225e2c1d64aa70c0ab830b601e, type: 3}
+  m_PrefabInstance: {fileID: 977009460}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8829f965957cc3046a2feba774f2db42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1019507323
 GameObject:
   m_ObjectHideFlags: 0
@@ -3376,7 +3421,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3495,7 +3540,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3880,7 +3925,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4334,7 +4379,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4520,7 +4565,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4639,7 +4684,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4912,7 +4957,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5022,8 +5067,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013740587952, guid: f7ba1e225e2c1d64aa70c0ab830b601e, type: 3}
+      propertyPath: testSinkPercentage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7ba1e225e2c1d64aa70c0ab830b601e, type: 3}
+--- !u!114 &1637216105 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114000013740587952, guid: f7ba1e225e2c1d64aa70c0ab830b601e, type: 3}
+  m_PrefabInstance: {fileID: 1637216104}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8829f965957cc3046a2feba774f2db42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1725636763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5087,8 +5147,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013740587952, guid: f7ba1e225e2c1d64aa70c0ab830b601e, type: 3}
+      propertyPath: testSinkPercentage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7ba1e225e2c1d64aa70c0ab830b601e, type: 3}
+--- !u!114 &1725636764 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114000013740587952, guid: f7ba1e225e2c1d64aa70c0ab830b601e, type: 3}
+  m_PrefabInstance: {fileID: 1725636763}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8829f965957cc3046a2feba774f2db42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1728805818
 GameObject:
   m_ObjectHideFlags: 0
@@ -5161,7 +5236,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5691,7 +5766,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5796,7 +5871,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5962,7 +6037,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6038,6 +6113,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e5b88d0e66a4395b0254b278646b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  islands:
+  - islandObject: {fileID: 112363}
+    waterSurface: {fileID: 977009461}
+    maxSink: 2
+    sinkSpeed: 5
+  - islandObject: {fileID: 743098221}
+    waterSurface: {fileID: 1637216105}
+    maxSink: 2
+    sinkSpeed: 5
+  - islandObject: {fileID: 1070358347}
+    waterSurface: {fileID: 932428950}
+    maxSink: 2
+    sinkSpeed: 5
+  - islandObject: {fileID: 857817780}
+    waterSurface: {fileID: 1725636764}
+    maxSink: 2
+    sinkSpeed: 5
+  - islandObject: {fileID: 1225474981}
+    waterSurface: {fileID: 384214755}
+    maxSink: 2
+    sinkSpeed: 5
   malfunctionsList:
   - malfunctionIsland: {fileID: 743098221}
     malfunctionObject: {fileID: 878594699}
@@ -6045,66 +6141,77 @@ MonoBehaviour:
     fixObject: {fileID: 0}
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
+    startedAt: 0
   - malfunctionIsland: {fileID: 112363}
     malfunctionObject: {fileID: 84284176}
     fixIsland: {fileID: 1225474981}
     fixObject: {fileID: 99935504}
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
+    startedAt: 0
   - malfunctionIsland: {fileID: 857817780}
     malfunctionObject: {fileID: 251283017}
     fixIsland: {fileID: 0}
     fixObject: {fileID: 0}
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
+    startedAt: 0
   - malfunctionIsland: {fileID: 1225474981}
     malfunctionObject: {fileID: 1728805818}
     fixIsland: {fileID: 857817780}
     fixObject: {fileID: 696522369}
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
+    startedAt: 0
   - malfunctionIsland: {fileID: 1070358347}
     malfunctionObject: {fileID: 1061712180}
     fixIsland: {fileID: 743098221}
     fixObject: {fileID: 1164686910}
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
+    startedAt: 0
   - malfunctionIsland: {fileID: 112363}
     malfunctionObject: {fileID: 572793955}
     fixIsland: {fileID: 1070358347}
     fixObject: {fileID: 256501289}
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
+    startedAt: 0
   - malfunctionIsland: {fileID: 743098221}
     malfunctionObject: {fileID: 1400899230}
     fixIsland: {fileID: 112363}
     fixObject: {fileID: 1485000798}
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
+    startedAt: 0
   - malfunctionIsland: {fileID: 1225474981}
     malfunctionObject: {fileID: 1019507323}
     fixIsland: {fileID: 1070358347}
     fixObject: {fileID: 836542419}
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
+    startedAt: 0
   - malfunctionIsland: {fileID: 1070358347}
     malfunctionObject: {fileID: 2091930178}
     fixIsland: {fileID: 743098221}
     fixObject: {fileID: 1594333230}
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
+    startedAt: 0
   - malfunctionIsland: {fileID: 857817780}
     malfunctionObject: {fileID: 1886585609}
     fixIsland: {fileID: 1225474981}
     fixObject: {fileID: 1545866147}
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
+    startedAt: 0
   - malfunctionIsland: {fileID: 112363}
     malfunctionObject: {fileID: 1980804105}
     fixIsland: {fileID: 112363}
     fixObject: {fileID: 1926286078}
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
+    startedAt: 0
   curMalfunction:
     malfunctionIsland: {fileID: 0}
     malfunctionObject: {fileID: 0}
@@ -6112,8 +6219,10 @@ MonoBehaviour:
     fixObject: {fileID: 0}
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
+    startedAt: 0
   malfunctionWayPoint: {fileID: 6012766}
   malfunctionWayPointOffset: {x: 0, y: 0, z: 0}
+  timeGameStarted: 0
 --- !u!4 &2013523928
 Transform:
   m_ObjectHideFlags: 0
@@ -6267,7 +6376,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
