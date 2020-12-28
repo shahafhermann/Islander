@@ -14,13 +14,21 @@ public class Malfunction
     public Sprite fixImage;
     public float startedAt; // when the malfunction started
     //public float totalTime; // how long until malfunction can no longer be repaired
-    private bool originIslandDrowned;  // Will be true if the island has drowned.
+    private bool _originIslandDrowned;  // Will be true if the island has drowned.
 
     public void setDrowned() {
-        originIslandDrowned = true;
+        _originIslandDrowned = true;
     }
 
     public bool isOriginIslandDrowned() {
-        return originIslandDrowned;
+        return _originIslandDrowned;
+    }
+
+    public void fix() {
+        malfunctionObject.GetComponent<SpriteRenderer>().sprite = fixImage;
+    }
+    
+    public void breakItem() {
+        malfunctionObject.GetComponent<SpriteRenderer>().sprite = malfunctionImage;
     }
 }

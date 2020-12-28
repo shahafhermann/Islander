@@ -21,6 +21,7 @@ public class MalfunctionFactory {
                  malfunctions[indexOfMalfunctionToReturn].isOriginIslandDrowned());
 
         lastMalfunction = indexOfMalfunctionToReturn;
+        malfunctions[indexOfMalfunctionToReturn].breakItem();
         return malfunctions[indexOfMalfunctionToReturn];
     }
 }

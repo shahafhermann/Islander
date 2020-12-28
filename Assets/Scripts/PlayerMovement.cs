@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour {
     private bool isZooming = false;
 
     public Image inventoryImage;
+    public Sprite emptyInventory;
     private GameObject inventory;
     private GameObject curNearPickupFix;
     private GameObject curNearStaticFix;
@@ -78,14 +79,17 @@ public class PlayerMovement : MonoBehaviour {
             GameObject fix = gameDriver.curMalfunction.fixObject;
             if (fix.Equals(null)) {
                 if (gameDriver.curMalfunction.malfunctionObject.Equals(curNearMalFunction)) {
+                    Debug.Log("solved true no fix item");
                     gameDriver.solve(true);
                 }
                 else {
+                    Debug.Log("solved false");
                     gameDriver.solve(false);
                 }
             } 
             // Else, if it does require an item but not a pickup, solve(false).
             else if (fix.tag.Equals("StaticFixes")) {
+                Debug.Log("solved false, require static");
                 gameDriver.solve(false);
             }
             // Else, if it does require an item that is picked up:
@@ -93,12 +97,14 @@ public class PlayerMovement : MonoBehaviour {
             //     - Else solve(false).
             else if (fix.tag.Equals("PickupFixes")) {
                 if (inventory && fix.Equals(inventory)) {
+                    Debug.Log("solved true, pickup");
                     inventory = null;
-                    inventoryImage.sprite = null;  // TODO: get a default empty inventory image
+                    inventoryImage.sprite = emptyInventory;  // TODO: get a default empty inventory image
                     fix.SetActive(true);
                     gameDriver.solve(true);
                 }
                 else {
+                    Debug.Log("solved false wrong pickup");
                     gameDriver.solve(false);
                 }
             }
@@ -117,14 +123,17 @@ public class PlayerMovement : MonoBehaviour {
             // Check the malfunction fix. If it doesnt require an item, solve(false).
             GameObject fix = gameDriver.curMalfunction.fixObject;
             if (fix.Equals(null)) {
+                Debug.Log("solved false, no item required");
                 gameDriver.solve(false);
             }
             // Else, if requires a static fix, and it's the correct one - solve(true).
             else if (fix.tag.Equals("StaticFixes") && fix.Equals(curNearStaticFix)) {
+                Debug.Log("solved true");
                 gameDriver.solve(true);
             }
             // Else, solve(false)
             else {
+                Debug.Log("solved false wrong static fix or used item");
                 gameDriver.solve(false);
             }
         }
