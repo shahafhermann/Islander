@@ -4046,7 +4046,7 @@ Transform:
   m_GameObject: {fileID: 1061712180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.17, y: 4.14, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 643786252}
   m_RootOrder: 1
@@ -4091,12 +4091,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -6
-  m_Sprite: {fileID: 21300000, guid: ebf3422851adf45db831700176619765, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e7f24a15aa51642d6aee826808bb35ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 4.4, y: 4.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -6914,8 +6914,8 @@ MonoBehaviour:
     malfunctionObject: {fileID: 1061712180}
     fixIsland: {fileID: 743098221}
     fixObject: {fileID: 1164686910}
-    malfunctionImage: {fileID: 0}
-    fixImage: {fileID: 0}
+    malfunctionImage: {fileID: 21300000, guid: 21236869708914089bf130d82a6f0529, type: 3}
+    fixImage: {fileID: 21300000, guid: e7f24a15aa51642d6aee826808bb35ff, type: 3}
   - malfunctionIsland: {fileID: 112363}
     malfunctionObject: {fileID: 572793955}
     fixIsland: {fileID: 1070358347}
