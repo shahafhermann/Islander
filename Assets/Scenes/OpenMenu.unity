@@ -151,7 +151,7 @@ RectTransform:
   m_GameObject: {fileID: 192254268}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children:
   - {fileID: 1616927564}
   m_Father: {fileID: 1250581283}
@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000022888, y: -80}
+  m_AnchoredPosition: {x: -0.0000025433, y: -58.045}
   m_SizeDelta: {x: 619.1494, y: 116.090515}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &192254270
@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -389,8 +389,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -18}
+  m_SizeDelta: {x: 261.95288, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &378625778
 MonoBehaviour:
@@ -413,9 +413,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 48
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: d988702436f7f4456a449fcfd8be6b30, type: 3}
+    m_FontSize: 36
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 48
@@ -468,8 +468,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 6}
-  m_SizeDelta: {x: 1530.0544, y: 511.98547}
+  m_AnchoredPosition: {x: 22, y: -71}
+  m_SizeDelta: {x: 1702.456, y: 871.7803}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &688573013
 MonoBehaviour:
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -492,11 +492,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 48
+    m_Font: {fileID: 12800000, guid: d988702436f7f4456a449fcfd8be6b30, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 0
     m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -504,20 +504,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'The year is somewhere around 3170. Humanity is long gone.
-
-    The only
-    ones left are you and your human friend.
-
-    You''re the only ones who can carry
-    on the knowledge, and find a place to settle and start again.
-
-    But something
-    went wrong - The islands that remained from what was once continents, are starting
-    to crumble and sink.
-
-
-    Work together, save the islands, and save humanity!'
+  m_Text: "The year is somewhere around 3170. \n\nHumanity is long gone.\n\nThe only
+    ones left are you and your human\n\nfriend.\n\nYou're the only ones who can carry
+    on the\n\nknowledge, and find a place to settle and\n\nstart again.\n\nBut something
+    went wrong - The islands that\n\nremained from what was once continents, are\n\nstarting
+    to crumble and sink.\n\n\n\nWork together, save the islands, and save\n\nhumanity!"
 --- !u!222 &688573014
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -554,7 +545,7 @@ RectTransform:
   m_GameObject: {fileID: 731133425}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children:
   - {fileID: 378625777}
   m_Father: {fileID: 1250581283}
@@ -562,8 +553,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000022888, y: 68}
-  m_SizeDelta: {x: 619.1494, y: 116.0905}
+  m_AnchoredPosition: {x: 0.000022888, y: 44}
+  m_SizeDelta: {x: 357.19653, y: 116.0905}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &731133427
 MonoBehaviour:
@@ -816,7 +807,7 @@ RectTransform:
   m_GameObject: {fileID: 940934349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 861850282}
   - {fileID: 688573012}
@@ -944,7 +935,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 656.7395, y: 355.3705}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1250581284
 MonoBehaviour:
@@ -994,7 +985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -10, y: -18}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1616927565
@@ -1018,9 +1009,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 48
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: d988702436f7f4456a449fcfd8be6b30, type: 3}
+    m_FontSize: 36
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 48
@@ -1073,7 +1064,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 6, y: -14}
   m_SizeDelta: {x: 476, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1627415187
@@ -1097,8 +1088,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 32
+    m_Font: {fileID: 12800000, guid: d988702436f7f4456a449fcfd8be6b30, type: 3}
+    m_FontSize: 28
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
