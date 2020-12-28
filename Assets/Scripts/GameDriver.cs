@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameDriver : MonoBehaviour
@@ -24,11 +26,12 @@ public class GameDriver : MonoBehaviour
     public float timer;
     public Text timerText;
 
-    private bool temp = true; // TODO delete
-    
     private AudioSource sounds;
     public AudioClip success;
     public AudioClip fail;
+    
+    public Animator transition;
+    public float transitionTime = 1f;
 
     void Start()
     {
@@ -48,7 +51,7 @@ public class GameDriver : MonoBehaviour
 
     private void Update() {
         if (curDrowned == maxDrownedAllowed) {
-            // endGame();
+            endGame();
         }
         
         if (timer > 0) {
@@ -64,7 +67,7 @@ public class GameDriver : MonoBehaviour
             }
         }
         else {
-            // endGame();
+            endGame();
         }
         
         // set start time on first update when game actually starts
@@ -73,17 +76,18 @@ public class GameDriver : MonoBehaviour
             timeGameStarted = Time.time;
         }
 
-        if (temp) {  // TODO delete
-            Debug.Log(curMalfunction.malfunctionIsland);
-            Debug.Log(curMalfunction.malfunctionObject);
-            Debug.Log(curMalfunction.fixIsland);
-            Debug.Log(curMalfunction.fixObject);
-            temp = false;
-        }
-        
-        // TODO insert sink with timer
-        
         showWaypoints();
+    }
+
+    private void endGame() {
+        StartCoroutine(loadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+    
+    IEnumerator loadLevel(int levelIndex) {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        
+        SceneManager.LoadScene(levelIndex);
     }
 
     private void sinkIsland() {
@@ -146,7 +150,6 @@ public class GameDriver : MonoBehaviour
             // If the island has drowned, count it as a strike, block the island and generate a new malfunction.
             if (curIsland.isDrowned()) {
                 curDrowned++;
-                // TODO maybe give a global timer penalty?
                 newMalfunction();
             }
         }
@@ -156,7 +159,6 @@ public class GameDriver : MonoBehaviour
         curMalfunction = malfunctionFactory.generateMalfunction();
         setCurrentIsland();
         curMalfunctionTypeRenderer.sprite = curMalfunction.malfunctionTypeImage;
-        temp = true; // TODO delete
     }
 
     private void setCurrentIsland() {
