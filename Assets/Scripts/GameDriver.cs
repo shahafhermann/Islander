@@ -114,7 +114,7 @@ public class GameDriver : MonoBehaviour
         if (success) {
             // Steps to reduce flooding go here:
             curIsland.reduceSink(0.25f);
-            
+            curMalfunction.fix();
             // Generate new malfunction:
             newMalfunction();
         }
