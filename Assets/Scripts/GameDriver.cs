@@ -59,6 +59,9 @@ public class GameDriver : MonoBehaviour
             string seconds = Mathf.Floor(timer % 60).ToString("00");
      
             timerText.text = minutes + ":" + seconds;
+            if (timer < 30) {
+                timerText.color = new Color(1, 0.168f, 0.219f, 1);
+            }
         }
         else {
             // endGame();
