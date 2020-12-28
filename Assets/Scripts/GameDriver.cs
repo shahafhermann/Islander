@@ -4,21 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// [Serializable]
-// public struct Malfunction
-// {
-//     public GameObject malfunctionIsland;
-//     public GameObject malfunctionObject;
-//     public GameObject fixIsland;
-//     public GameObject fixObject;
-//     // public bool isPickupFix;  // Not needed after all, using object tags instead.
-//     public Sprite malfunctionImage;
-//     public Sprite fixImage;
-//     public float startedAt; // when the malfunction started
-//     //public float totalTime; // how long until malfunction can no longer be repaired
-//     [HideInInspector] public bool originIslandDrowned;  // Will be true if the island has drowned.
-// }
-
 public class GameDriver : MonoBehaviour
 {
     public List<Island> islands;
@@ -27,7 +12,7 @@ public class GameDriver : MonoBehaviour
     [HideInInspector] public Malfunction curMalfunction;
     private Island curIsland;
 
-    public int maxDrownedAllowed = 3;
+    public int maxDrownedAllowed = 1;
     private int curDrowned = 0;
 
     public Image malfunctionWayPoint;
@@ -35,6 +20,9 @@ public class GameDriver : MonoBehaviour
     public Vector3 malfunctionWayPointOffset;
 
     public float timeGameStarted; // time when the game actually started
+
+    public float timer;
+    public Text timerText;
 
     private bool temp = true; // TODO delete
 
@@ -52,7 +40,20 @@ public class GameDriver : MonoBehaviour
 
     private void Update() {
         if (curDrowned == maxDrownedAllowed) {
-            // TODO end game
+            // endGame();
+        }
+        
+        if (timer > 0) {
+            timer -= Time.deltaTime;
+            timer = (timer < 0) ? 0 : timer;
+            
+            string minutes = Mathf.Floor(timer / 60).ToString("00");
+            string seconds = Mathf.Floor(timer % 60).ToString("00");
+     
+            timerText.text = minutes + ":" + seconds;
+        }
+        else {
+            // endGame();
         }
         
         // set start time on first update when game actually starts
@@ -133,7 +134,6 @@ public class GameDriver : MonoBehaviour
 
     private void newMalfunction() {
         curMalfunction = malfunctionFactory.generateMalfunction();
-        curMalfunction.startedAt = Time.time;
         setCurrentIsland();
         temp = true; // TODO delete
     }

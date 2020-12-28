@@ -12,8 +12,6 @@ public class Malfunction
     public GameObject fixObject;
     public Sprite malfunctionImage;
     public Sprite fixImage;
-    public float startedAt; // when the malfunction started
-    //public float totalTime; // how long until malfunction can no longer be repaired
     private bool _originIslandDrowned;  // Will be true if the island has drowned.
 
     public void setDrowned() {
