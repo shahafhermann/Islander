@@ -117,8 +117,8 @@ public class PlayerMovement : MonoBehaviour {
             // Check the malfunction. If it doesnt require an item:
             // If this is the current malfunction, solve(true). Else solve(false).
             GameObject fix = gameDriver.curMalfunction.fixObject;
-            if (fix.Equals(null)) {
-                if (gameDriver.curMalfunction.malfunctionObject.Equals(curNearMalFunction)) {
+            if (!fix) {
+                if (gameDriver.curMalfunction.malfunctionObject == curNearMalFunction) {
                     gameDriver.solve(true);
                 }
                 else {
@@ -133,7 +133,7 @@ public class PlayerMovement : MonoBehaviour {
             //     - If the item is in the inventory: remove item from inventory, re-enable it's image and solve(true).
             //     - Else solve(false).
             else if (fix.tag.Equals("PickupFixes")) {
-                if (inventory && fix.Equals(inventory)) {
+                if (inventory && fix == inventory) {
                     // Play dropoff sound
                     itemSounds.clip = dropoff;
                     itemSounds.Play();
@@ -164,11 +164,11 @@ public class PlayerMovement : MonoBehaviour {
         } else if (curNearStaticFix) {  // Else, if near a static fix
             // Check the malfunction fix. If it doesnt require an item, solve(false).
             GameObject fix = gameDriver.curMalfunction.fixObject;
-            if (fix.Equals(null)) {
+            if (!fix) {
                 gameDriver.solve(false);
             }
             // Else, if requires a static fix, and it's the correct one - solve(true).
-            else if (fix.tag.Equals("StaticFixes") && fix.Equals(curNearStaticFix)) {
+            else if (fix.tag.Equals("StaticFixes") && fix == curNearStaticFix) {
                 gameDriver.solve(true);
             }
             // Else, solve(false)
