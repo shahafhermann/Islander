@@ -3290,6 +3290,7 @@ MonoBehaviour:
   playerCamera: {fileID: 1785541290}
   inventoryImage: {fileID: 1123256022}
   emptyInventory: {fileID: 21300000, guid: 47771f86306d945dfb7c881833526c85, type: 3}
+  malfunctionTypeGO: {fileID: 1430599100}
   movementSounds: {fileID: 878515788}
   itemSounds: {fileID: 878515789}
   pickup: {fileID: 8300000, guid: 1256655fcf47c48fab852ba6c8920aab, type: 3}
@@ -3392,7 +3393,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.923, y: 13.752, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1430599101}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5384,6 +5386,88 @@ Transform:
   m_Father: {fileID: 643786252}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1430599100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1430599101}
+  - component: {fileID: 1430599102}
+  m_Layer: 8
+  m_Name: Current Malfunction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1430599101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430599100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.03, y: 0.31, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 878515786}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1430599102
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430599100}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 20
+  m_Sprite: {fileID: 21300000, guid: 45f5fc6134a3941abb64d57f882339aa, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.86, y: 1.84}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1449247122
 GameObject:
   m_ObjectHideFlags: 0
@@ -7058,6 +7142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e5b88d0e66a4395b0254b278646b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerGO: {fileID: 878515781}
+  curMalfunctionTypeRenderer: {fileID: 1430599102}
   islands:
   - islandObject: {fileID: 112363}
     waterSurface: {fileID: 977009461}
@@ -7091,66 +7177,77 @@ MonoBehaviour:
     fixObject: {fileID: 0}
     malfunctionImage: {fileID: 21300000, guid: c15fc09d1f6e1430b96a95ab400d8847, type: 3}
     fixImage: {fileID: 21300000, guid: 4224b7aa154034e05825ab0761de00bc, type: 3}
+    malfunctionTypeImage: {fileID: 21300000, guid: 45f5fc6134a3941abb64d57f882339aa, type: 3}
   - malfunctionIsland: {fileID: 112363}
     malfunctionObject: {fileID: 84284176}
     fixIsland: {fileID: 1225474981}
     fixObject: {fileID: 99935504}
     malfunctionImage: {fileID: 21300000, guid: 9bef141c684bf49878bb7a44f90536a4, type: 3}
     fixImage: {fileID: 21300000, guid: 69bc3a2eab45e400ea43d1ceacd94e44, type: 3}
+    malfunctionTypeImage: {fileID: 21300000, guid: c21d25f22a8d24fa2a870dac8702e7fe, type: 3}
   - malfunctionIsland: {fileID: 857817780}
     malfunctionObject: {fileID: 251283017}
     fixIsland: {fileID: 0}
     fixObject: {fileID: 0}
     malfunctionImage: {fileID: 21300000, guid: a145e6d27a009478b92bcefcf615bb01, type: 3}
     fixImage: {fileID: 21300000, guid: ccf0de7b7f97548a98457d815a095e20, type: 3}
+    malfunctionTypeImage: {fileID: 21300000, guid: fc358d3a8653842a499468cb7d6a774b, type: 3}
   - malfunctionIsland: {fileID: 1225474981}
     malfunctionObject: {fileID: 1728805818}
     fixIsland: {fileID: 857817780}
     fixObject: {fileID: 696522369}
     malfunctionImage: {fileID: 21300000, guid: 1cf9e598416674bd4a9a773197ccd63e, type: 3}
     fixImage: {fileID: 21300000, guid: ed0b77cf174694e2690c4ae84ba8b9fe, type: 3}
+    malfunctionTypeImage: {fileID: 21300000, guid: 45f5fc6134a3941abb64d57f882339aa, type: 3}
   - malfunctionIsland: {fileID: 1070358347}
     malfunctionObject: {fileID: 1061712180}
     fixIsland: {fileID: 743098221}
     fixObject: {fileID: 1164686910}
     malfunctionImage: {fileID: 21300000, guid: 21236869708914089bf130d82a6f0529, type: 3}
     fixImage: {fileID: 21300000, guid: e7f24a15aa51642d6aee826808bb35ff, type: 3}
+    malfunctionTypeImage: {fileID: 21300000, guid: b47e2d61c697a4c6ebb9a220a74817f8, type: 3}
   - malfunctionIsland: {fileID: 112363}
     malfunctionObject: {fileID: 572793955}
     fixIsland: {fileID: 1070358347}
     fixObject: {fileID: 256501289}
     malfunctionImage: {fileID: 21300000, guid: c994c5436b03a435b85b816251d0c891, type: 3}
     fixImage: {fileID: 21300000, guid: 6082ef37ba13e49978b9a68af54d4adf, type: 3}
+    malfunctionTypeImage: {fileID: 21300000, guid: b47e2d61c697a4c6ebb9a220a74817f8, type: 3}
   - malfunctionIsland: {fileID: 743098221}
     malfunctionObject: {fileID: 1400899230}
     fixIsland: {fileID: 112363}
     fixObject: {fileID: 1485000798}
     malfunctionImage: {fileID: 21300000, guid: 3cff7ff0c96144169a2089b401a1dc3e, type: 3}
     fixImage: {fileID: 21300000, guid: 9873010ae4f2c46dc979cbae57be9beb, type: 3}
+    malfunctionTypeImage: {fileID: 21300000, guid: c21d25f22a8d24fa2a870dac8702e7fe, type: 3}
   - malfunctionIsland: {fileID: 1225474981}
     malfunctionObject: {fileID: 1019507323}
     fixIsland: {fileID: 1070358347}
     fixObject: {fileID: 836542419}
     malfunctionImage: {fileID: 21300000, guid: 000a0ef6232884037a58e20916d9bfae, type: 3}
     fixImage: {fileID: 21300000, guid: 9bb8ee0653f244686a9b12d7af5d0df7, type: 3}
+    malfunctionTypeImage: {fileID: 21300000, guid: c21d25f22a8d24fa2a870dac8702e7fe, type: 3}
   - malfunctionIsland: {fileID: 1070358347}
     malfunctionObject: {fileID: 2091930178}
     fixIsland: {fileID: 743098221}
     fixObject: {fileID: 1594333230}
     malfunctionImage: {fileID: 21300000, guid: 53084cc9e8caa46798bc5010b863053e, type: 3}
     fixImage: {fileID: 21300000, guid: ab111b6e344f54ea4993a8ddddd0ffde, type: 3}
+    malfunctionTypeImage: {fileID: 21300000, guid: 45f5fc6134a3941abb64d57f882339aa, type: 3}
   - malfunctionIsland: {fileID: 857817780}
     malfunctionObject: {fileID: 1886585609}
     fixIsland: {fileID: 1225474981}
     fixObject: {fileID: 1545866147}
     malfunctionImage: {fileID: 21300000, guid: 3cdd9e4666fa141dc9bd53a1a20da597, type: 3}
     fixImage: {fileID: 21300000, guid: 9e1535b1a7fe2469c816d43cdd867b86, type: 3}
+    malfunctionTypeImage: {fileID: 21300000, guid: fc358d3a8653842a499468cb7d6a774b, type: 3}
   - malfunctionIsland: {fileID: 112363}
     malfunctionObject: {fileID: 1926286078}
     fixIsland: {fileID: 0}
     fixObject: {fileID: 0}
     malfunctionImage: {fileID: 21300000, guid: 5f6c36b4712cc4de4929d442bb60296a, type: 3}
     fixImage: {fileID: 21300000, guid: 6f36fbda2245b4ac1b97b150e6b90aa8, type: 3}
+    malfunctionTypeImage: {fileID: 21300000, guid: 45f5fc6134a3941abb64d57f882339aa, type: 3}
   curMalfunction:
     malfunctionIsland: {fileID: 0}
     malfunctionObject: {fileID: 0}
@@ -7158,6 +7255,7 @@ MonoBehaviour:
     fixObject: {fileID: 0}
     malfunctionImage: {fileID: 0}
     fixImage: {fileID: 0}
+    malfunctionTypeImage: {fileID: 0}
   maxDrownedAllowed: 1
   malfunctionWayPoint: {fileID: 6012766}
   malfunctionWayPointOffset: {x: 0, y: 0, z: 0}

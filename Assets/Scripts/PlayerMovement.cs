@@ -26,6 +26,10 @@ public class PlayerMovement : MonoBehaviour {
 
     public Image inventoryImage;
     public Sprite emptyInventory;
+    public GameObject malfunctionTypeGO;
+    private SpriteRenderer malfunctionTypeRenderer;
+    private Vector2 originalMalfunctionPos;
+
     private GameObject inventory;
     private GameObject curNearPickupFix;
     private GameObject curNearStaticFix;
@@ -40,12 +44,39 @@ public class PlayerMovement : MonoBehaviour {
         if (rb == null) {
             rb = gameObject.GetComponent<Rigidbody2D>();
         }
+        malfunctionTypeRenderer = malfunctionTypeGO.GetComponent<SpriteRenderer>();
+        originalMalfunctionPos = malfunctionTypeGO.transform.localPosition;
     }
 
-    void Update() {
-        if (!isZooming) {
-            _movement.x = Input.GetAxisRaw("Horizontal");
-            _movement.y = Input.GetAxisRaw("Vertical");
+    void Update() {        
+        _movement.x = Input.GetAxisRaw("Horizontal");
+        _movement.y = Input.GetAxisRaw("Vertical");
+        if (isZooming)
+        {
+            _movement = Vector2.zero;
+        }
+
+        if(_movement.y < 0 || _movement == Vector2.zero)
+        {
+            malfunctionTypeRenderer.enabled = true;
+            float offset;
+            Vector2 scale = new Vector2(0.75f, 0.75f);
+            if (_movement.x > 0) {
+                offset = 0.38f;
+            }
+            else if (_movement.x < 0) {
+                offset = -0.38f;
+            }
+            else {
+                offset = 0;
+                scale = Vector2.one;
+            }
+            malfunctionTypeGO.transform.localPosition = new Vector2(originalMalfunctionPos.x + offset, originalMalfunctionPos.y);
+            malfunctionTypeGO.transform.localScale = scale;
+        }
+        else
+        {
+            malfunctionTypeRenderer.enabled = false;
         }
 
         // Movement sounds
@@ -68,6 +99,7 @@ public class PlayerMovement : MonoBehaviour {
             float newSize = Mathf.Max(playerCamera.m_Lens.OrthographicSize - 0.2f, Default_Zoom);
             playerCamera.m_Lens.OrthographicSize = newSize;
         }
+
         // Animations control.
         playerAnimator.SetFloat("Horizontal", _movement.x);
         playerAnimator.SetFloat("Vertical", _movement.y);

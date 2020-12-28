@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameDriver : MonoBehaviour
 {
+    public GameObject playerGO;
+    public SpriteRenderer curMalfunctionTypeRenderer;
     public List<Island> islands;
     public List<Malfunction> malfunctionsList;
     private MalfunctionFactory malfunctionFactory;
@@ -41,6 +41,9 @@ public class GameDriver : MonoBehaviour
         GameManager.Instance.setGameDriver(this); // maybe not needed, set to game manager so it can be used staticly (GameManager.Instance...)
         
         InvokeRepeating(nameof(sinkIsland), 0f, 0.1f);
+
+        int startIsland = (int)Random.Range(0, islands.Count - 0.001f);
+        playerGO.transform.position = islands[startIsland].islandObject.transform.position;
     }
 
     private void Update() {
@@ -149,6 +152,7 @@ public class GameDriver : MonoBehaviour
     private void newMalfunction() {
         curMalfunction = malfunctionFactory.generateMalfunction();
         setCurrentIsland();
+        curMalfunctionTypeRenderer.sprite = curMalfunction.malfunctionTypeImage;
         temp = true; // TODO delete
     }
 

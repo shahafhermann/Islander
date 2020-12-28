@@ -12,6 +12,7 @@ public class Malfunction
     public GameObject fixObject;
     public Sprite malfunctionImage;
     public Sprite fixImage;
+    public Sprite malfunctionTypeImage;
     private bool _originIslandDrowned;  // Will be true if the island has drowned.
 
     public void setDrowned() {
