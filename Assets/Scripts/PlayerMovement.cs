@@ -31,6 +31,11 @@ public class PlayerMovement : MonoBehaviour {
     private GameObject curNearStaticFix;
     private GameObject curNearMalFunction;
 
+    public AudioSource movementSounds;
+    public AudioSource itemSounds;
+    public AudioClip pickup;
+    public AudioClip dropoff;
+
     private void Start() {
         if (rb == null) {
             rb = gameObject.GetComponent<Rigidbody2D>();
@@ -43,12 +48,15 @@ public class PlayerMovement : MonoBehaviour {
             _movement.y = Input.GetAxisRaw("Vertical");
         }
 
+        // Movement sounds
+        if (_movement.x == 0f && _movement.y == 0f) {
+            movementSounds.Stop();
+        } else if (!movementSounds.isPlaying) {
+            movementSounds.Play();
+        }
+
         if (Input.GetKeyDown(interactKey)) {
             interact();
-            Debug.Log("Interacting.");  // TODO delete
-            if (inventory) {
-                Debug.Log("Inventory now has: " + inventory.name);
-            }
         }
         if (Input.GetKey(zoomOutKey) && playerCamera.m_Lens.OrthographicSize < Max_Zoom_Out) {
             isZooming = true;
@@ -79,17 +87,14 @@ public class PlayerMovement : MonoBehaviour {
             GameObject fix = gameDriver.curMalfunction.fixObject;
             if (fix.Equals(null)) {
                 if (gameDriver.curMalfunction.malfunctionObject.Equals(curNearMalFunction)) {
-                    Debug.Log("solved true no fix item");
                     gameDriver.solve(true);
                 }
                 else {
-                    Debug.Log("solved false");
                     gameDriver.solve(false);
                 }
             } 
             // Else, if it does require an item but not a pickup, solve(false).
             else if (fix.tag.Equals("StaticFixes")) {
-                Debug.Log("solved false, require static");
                 gameDriver.solve(false);
             }
             // Else, if it does require an item that is picked up:
@@ -97,14 +102,16 @@ public class PlayerMovement : MonoBehaviour {
             //     - Else solve(false).
             else if (fix.tag.Equals("PickupFixes")) {
                 if (inventory && fix.Equals(inventory)) {
-                    Debug.Log("solved true, pickup");
+                    // Play dropoff sound
+                    itemSounds.clip = dropoff;
+                    itemSounds.Play();
+                    
                     inventory = null;
-                    inventoryImage.sprite = emptyInventory;  // TODO: get a default empty inventory image
+                    inventoryImage.sprite = emptyInventory;
                     fix.SetActive(true);
                     gameDriver.solve(true);
                 }
                 else {
-                    Debug.Log("solved false wrong pickup");
                     gameDriver.solve(false);
                 }
             }
@@ -119,21 +126,21 @@ public class PlayerMovement : MonoBehaviour {
             curNearPickupFix.SetActive(false);
             // Update inventory image
             inventoryImage.sprite = inventory.GetComponent<SpriteRenderer>().sprite;
+            // Play pickup sound
+            itemSounds.clip = pickup;
+            itemSounds.Play();
         } else if (curNearStaticFix) {  // Else, if near a static fix
             // Check the malfunction fix. If it doesnt require an item, solve(false).
             GameObject fix = gameDriver.curMalfunction.fixObject;
             if (fix.Equals(null)) {
-                Debug.Log("solved false, no item required");
                 gameDriver.solve(false);
             }
             // Else, if requires a static fix, and it's the correct one - solve(true).
             else if (fix.tag.Equals("StaticFixes") && fix.Equals(curNearStaticFix)) {
-                Debug.Log("solved true");
                 gameDriver.solve(true);
             }
             // Else, solve(false)
             else {
-                Debug.Log("solved false wrong static fix or used item");
                 gameDriver.solve(false);
             }
         }

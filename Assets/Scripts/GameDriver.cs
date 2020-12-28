@@ -25,12 +25,17 @@ public class GameDriver : MonoBehaviour
     public Text timerText;
 
     private bool temp = true; // TODO delete
+    
+    private AudioSource sounds;
+    public AudioClip success;
+    public AudioClip fail;
 
     void Start()
     {
         malfunctionFactory = new MalfunctionFactory(malfunctionsList);
         newMalfunction();
         _wayPointRectTransform = malfunctionWayPoint.GetComponent<RectTransform>();
+        sounds = gameObject.GetComponent<AudioSource>();
         timeGameStarted = -1;
 
         GameManager.Instance.setGameDriver(this); // maybe not needed, set to game manager so it can be used staticly (GameManager.Instance...)
@@ -113,6 +118,11 @@ public class GameDriver : MonoBehaviour
 
     public void solve(bool success) {
         if (success) {
+            // Play Yay sound
+            sounds.clip = this.success;
+            if (!sounds.isPlaying) {
+                sounds.Play();
+            }
             // Steps to reduce flooding go here:
             curIsland.reduceSink(0.25f);
             curMalfunction.fix();
@@ -120,7 +130,11 @@ public class GameDriver : MonoBehaviour
             newMalfunction();
         }
         else {  // Failed to fix
-            // Tell the player that he's wrong
+            // Play Nay sound
+            sounds.clip = fail;
+            if (!sounds.isPlaying) {
+                sounds.Play();
+            }
             // Make the flooding worse
             curIsland.increaseSink(0.25f);
             // If the island has drowned, count it as a strike, block the island and generate a new malfunction.
